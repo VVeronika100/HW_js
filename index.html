@@ -7,54 +7,264 @@
 </head>
 <body>
     <script>
-        let str="Привет";
-        console.log(str, typeof str);
+        //Задание 1
+        let name = prompt('Ваше имя');
+        let age = prompt('Ваш возраст');
+        let city = prompt('Город проживания');
+        let phone = prompt('Ваш телефон');
+        let email = prompt('Ваш e-mail');
+        let company = prompt('Компания');
+        
+        document.write('Меня зовут ' + name + '. Мне ' + age + ' лет. Я проживаю в городе ' + city + ' и работаю в компании "' + company + '". Мои контактные данные: ' + email + ', ' + phone + '. '); 
 
-        let sum=123;
-        console.log(sum, typeof sum);
+        //Задание 2
 
-        let num=15.8;
-        console.log(num, typeof num);
+        let year = 2025 - age;
 
-        let flag=true;
-        console.log(flag, typeof flag);
+        document.write(name + ' родился в ' + year + ' году.');
 
-        let txt="true";
-        console.log(txt, typeof txt);
-    </script>
-    <script src="HW-1__2.js"></script>
-    <script src="HW-1__3.js"></script>
-    <script src="HW-1__4.js"></script>
-    <script src="HW-1__5.js"></script>
-    <script src="HW-1__6.js"></script>
-    <script src="HW-1__7.js"></script>
-    <script src="HW-1__8.js"></script>
-    <script>
-        console.log('Бывало, спит у ног собака,');
-        console.log('костер занявшийся гудит,');
-        console.log('и женщина из полумрака');
-        console.log('глазами зыбкими глядит.');
-        console.log('');
-        console.log('');
-        console.log('Потом под пихтою приляжет');
-        console.log('на куртку рыжую мою');
-        console.log('и мне, задумчивая, скажет:');
-        console.log('');
-        console.log('');
-        console.log('"А ну-ка, спой!.."- и я пою. ');
-    </script>
-    <script>
-        let str1 = "индо земля зашаталась под ногами-и вырос,"
-        let str2 = "и заревел он голосом диким…"
-        let str3 = "блеснула молния и ударил гром,"
-        let str4 = "а так какое-то чудище, страшное и мохнатое,"
-        let str5 = "как будто из-под земли, перед купцом:"
-        let str6 = "Он подошёл и сорвал аленький цветочек."
-        let str7 = "зверь не зверь, человек не человек,"
-        let str8 = "В ту же минуту, безо всяких туч,"
+        // Задание 3
 
-        let text = str6 + str8 + str3 + str1 + str5 + str7 + str4 + str2;
-        console.log(text);
+        let num1 = 4;
+        let num2 = 6;
+        let num3 = 1;
+        let num4 = 3;
+        let num5 = 7;
+        let num6 = 9;
+
+        ((num1 + num2 + num3) == (num4 + num5 + num6)) 
+         ? console.log('Да') 
+         : console.log('Нет'); 
+
+        // Задание 4
+
+        let a4 = -3;
+        (a4 > 0) ? console.log('Верно') : console.log('Неверно');
+
+        // Задание 5
+
+        let a = 10;
+        let b = 2;
+        
+        let sum = a + b;
+        let dif = a - b;
+        let mult = a * b;
+        let quot = a / b;
+        let result = sum + dif + mult + quot;
+
+        if (result > 1) {
+            console.log(result ** 2)
+        }
+
+        // Задание 6
+
+        if ((11 > a && a > 2) || (b >= 6 && b < 14)) {
+            console.log('Верно')
+        } else {
+            console.log('Неверно')
+        }
+
+        // Задание 7
+
+        let n = 15;
+
+        if ((n >= 0) && (n <= 15)) {
+            console.log('Первая')
+        } else if ((n >= 16) && (n <= 30)) {
+            console.log('Вторая')
+        } else if ((n >= 31) && (n <= 45)) {
+            console.log('Третья')
+        } else if ((n >= 46) && (n <= 59)) {
+            console.log('Четвёртая')
+        } else {
+            console.log('Неверное значение');
+        }
+
+        // Задание 8
+
+        let day = 1; 
+        
+        if ((day >= 1) && (day <= 10)) {
+            console.log('Первая декада')
+        } else if ((day >= 11) && (day <= 20)) {
+            console.log('Вторая декада')
+        } else if ((day >= 21) && (day <= 31)) {
+            console.log('Третья декада')
+        } else {
+            console.log('Неверное значение');
+        }
+      
+
+        // Задание 9
+
+        let days = 5687;
+
+        let second = days * 24 * 60 * 60;
+
+        if(second <= 0) {
+            console.log('Неверное значение');
+        } else if(second == 1) {
+            console.log('1 секунда')           
+        } else if((second > 1)&&(second < 5)) {
+            console.log(second + ' секунды')
+        } else {    
+            console.log(second + ' секунд')       
+        }
+
+        let minute = days * 24 * 60;
+
+        if(minute <= 0) {
+            console.log('Неверное значение');
+        } else if(minute == 1) {
+            console.log('1 минутa')           
+        } else if((minute > 1)&&(minute < 5)) {
+            console.log(minute + ' минуты')
+        } else {    
+            console.log(minute + ' минут')       
+        }
+
+        let hour = days * 24;
+
+        if(hour <= 0) {
+            console.log('Неверное значение');
+        } else if(hour == 1) {
+            console.log('1 час')           
+        } else if((hour > 1)&&(hour < 5)) {
+            console.log(hour + ' часа')
+        } else {    
+            console.log(hour + ' часов')       
+        }
+
+        let week = days / 7;
+        week = Math.floor(week);
+
+        if(week <= 0) {
+            console.log('Неверное значение');
+        } else if((week > 0) && (week < 1)) {
+            console.log('Меньше недели');
+        } else if(week == 1) {
+            console.log('1 неделя');
+        } else if((week > 1) && (week < 5)) {
+            console.log(week + ' недели');
+        } else {
+            console.log(week + ' недель')
+        }
+
+        let month = days / 31;
+        month = Math.floor(month);
+
+        if(month <= 0) {
+            console.log('Неверное значение');
+        } else if((month > 0) && (month < 1)) {
+            console.log('Меньше месяца');
+        } else if(month == 1) {
+            console.log('1 месяц');
+        } else if((month > 1) && (month < 5)) {
+            console.log(month + ' месяца');
+        } else {
+            console.log(month + ' месяцев')
+        }
+
+        let years = days / 365;
+        years = Math.floor(years);
+
+        if(years <= 0) {
+            console.log('Неверное значение');
+        } else if((years > 0) && (years < 1)) {
+            console.log('Меньше года');
+        } else if(years == 1) {
+            console.log('1 год');
+        } else if((years > 1) && (years < 5)) {
+            console.log(years + ' года');
+        } else {
+            console.log(years + ' лет')
+        }
+        
+        // Задание 10
+
+        day = 320;
+
+        if((day <= 0) || (day > 365)) {
+            console.log('Неверное значение');
+        } else if((day >= 1)&&(day <= 31)) {
+            console.log('Январь');
+            month = 'Январь';
+        } else if((day >= 32)&&(day <= 59)) {
+            console.log('Февраль');
+            month = 'Февраль';
+        } else if((day >= 60)&&(day <= 90)) {
+            console.log('Март');
+            month = 'Март';
+        } else if((day >= 91)&&(day <= 120)) {
+            console.log('Апрель');
+            month = 'Апрель';
+        } else if((day >= 121)&&(day <= 151)) {
+            console.log('Май');
+            month = 'Май';
+        } else if((day >= 152)&&(day <= 181)) {
+            console.log('Июнь');
+            month = 'Июнь';
+        } else if((day >= 182)&&(day <= 212)) {
+            console.log('Июль');
+            month = 'Июль';
+        } else if((day >= 213)&&(day <= 243)) {
+            console.log('Август');
+            month = 'Август';
+        } else if((day >= 244)&&(day <= 273)) {
+            console.log('Сентябрь');
+            month = 'Сентябрь';
+        } else if((day >= 274)&&(day <= 304)) {
+            console.log('Октябрь');
+            month = 'Октябрь';
+        } else if((day >= 305)&&(day <= 334)) {
+            console.log('Ноябрь');
+            month = 'Ноябрь';
+        } else if((day >= 335)&&(day <= 365)) {
+            console.log('Декабрь');
+            month = 'Декабрь';
+        }
+
+        switch (month) {
+            case 'Декабрь': 
+                console.log('Зима');
+            break;
+            case 'Январь': 
+                console.log('Зима');
+            break;
+            case 'Февраль': 
+                console.log('Зима');
+            break;
+            case 'Март': 
+                console.log('Весна');
+            break;
+            case 'Апрель': 
+                console.log('Весна');
+            break;
+            case 'Май': 
+                console.log('Весна');
+            break;
+            case 'Июнь': 
+                console.log('Лето');
+            break;
+            case 'Июль': 
+                console.log('Лето');
+            break;
+            case 'Август': 
+                console.log('Лето');
+            break;
+            case 'Сентябрь': 
+                console.log('Осень');
+            break;
+            case 'Октябрь': 
+                console.log('Осень');
+            break;
+            case 'Ноябрь': 
+                console.log('Осень');
+            break;
+        }
+
+
+
     </script>
 </body>
 </html>
