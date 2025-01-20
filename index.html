@@ -3,268 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW_js_1</title>
+    <title>HW_js</title>
 </head>
 <body>
-    <script>
-        //Задание 1
-        let name = prompt('Ваше имя');
-        let age = prompt('Ваш возраст');
-        let city = prompt('Город проживания');
-        let phone = prompt('Ваш телефон');
-        let email = prompt('Ваш e-mail');
-        let company = prompt('Компания');
-        
-        document.write('Меня зовут ' + name + '. Мне ' + age + ' лет. Я проживаю в городе ' + city + ' и работаю в компании "' + company + '". Мои контактные данные: ' + email + ', ' + phone + '. '); 
+    <script> 
+    // Задание 1
+        for(let i=1; i<=50; i++) {
+            console.log(i);        
+        }
 
-        //Задание 2
+        for(let i=35; i>=8; i--) {
+            console.log(i);        
+        }
 
-        let year = 2025 - age;
+         // Задание 2
 
-        document.write(name + ' родился в ' + year + ' году.');
+         let i2 = 89;
+         while(i2>=11) {
+            document.write(i2 + '<br>');
+            i2--;            
+         }
+         document.write('<br>');
 
         // Задание 3
+        console.log('');
 
-        let num1 = 4;
-        let num2 = 6;
-        let num3 = 1;
-        let num4 = 3;
-        let num5 = 7;
-        let num6 = 9;
+        let i3 = 0;
+        let sum = 0;
 
-        ((num1 + num2 + num3) == (num4 + num5 + num6)) 
-         ? console.log('Да') 
-         : console.log('Нет'); 
+        while (i3 <= 100) {
+            sum += i3;
+            i3++;
+        }
+        console.log(sum);
+
+        console.log('');
 
         // Задание 4
 
-        let a4 = -3;
-        (a4 > 0) ? console.log('Верно') : console.log('Неверно');
+        let n4 = 5;
+        let summ4 = 0;
+
+        for(let i4 = 1; i4 <= 5; i4++) {
+            summ4 += i4;
+        }
+
+        console.log(summ4);
+
+        console.log('');
 
         // Задание 5
 
-        let a = 10;
-        let b = 2;
+        let i5 = 8;
         
-        let sum = a + b;
-        let dif = a - b;
-        let mult = a * b;
-        let quot = a / b;
-        let result = sum + dif + mult + quot;
-
-        if (result > 1) {
-            console.log(result ** 2)
+        while(i5 <= 56) {
+            if (i5 % 2 == 0) {
+                console.log(i5);
+            }
+            i5++ 
         }
+        
+        for(i5 = 8; i5 <= 56; i5++) {
+            if (i5 % 2 == 0) {
+                console.log(i5);
+            }
+        }
+
+        console.log('');
 
         // Задание 6
 
-        if ((11 > a && a > 2) || (b >= 6 && b < 14)) {
-            console.log('Верно')
-        } else {
-            console.log('Неверно')
+        for(let i = 2; i <= 10; i++) {
+            for(let b = 1; b <=10; b++) {
+
+                document.write(i + '*' + b + ' = ' + (i * b) + "<br>");
+                           
+            }
+            document.write('<br>');
         }
+
 
         // Задание 7
+  
+        let n7 = 1000;
+        let str = '';
+        let resultRev = '';
+        let result = '';
+       
+        let num = 0;
 
-        let n = 15;
-
-        if ((n >= 0) && (n <= 15)) {
-            console.log('Первая')
-        } else if ((n >= 16) && (n <= 30)) {
-            console.log('Вторая')
-        } else if ((n >= 31) && (n <= 45)) {
-            console.log('Третья')
-        } else if ((n >= 46) && (n <= 59)) {
-            console.log('Четвёртая')
-        } else {
-            console.log('Неверное значение');
+        while (n7 >= 50) {
+            n7 /= 2;
+            if(n7 < 50) {
+                break;
+            }
+            str += (n7 + ' ');
+            num += 1;
         }
 
-        // Задание 8
-
-        let day = 1; 
-        
-        if ((day >= 1) && (day <= 10)) {
-            console.log('Первая декада')
-        } else if ((day >= 11) && (day <= 20)) {
-            console.log('Вторая декада')
-        } else if ((day >= 21) && (day <= 31)) {
-            console.log('Третья декада')
-        } else {
-            console.log('Неверное значение');
+        for(let res = str.length - 2; res >= 0; res--) {
+            if(str[res] === ' ') {
+                break;
+            } else {
+                resultRev += str[res];
+            }
         }
-      
+            
+        for(let rev = resultRev.length - 1; rev >= 0; rev--) {
+            result += resultRev[rev];
+        }
 
+        document.write('Минимальное значение: ' + result + ', количество итераций: ' + num + '.');
+
+       // Задание 8
+
+       let number = +prompt('Введите значение');
+       let summ8 = 0;
+       let arif = 0;
+
+       while (1) {
+            if(isNaN(number) || number < 0) {
+            alert('Неверное значение')
+            } else if((number == 0) || (number == '')) {
+                break;
+            } else {        
+                summ8 += number;
+                arif +=1;
+            }
+            number = +prompt('Введите значение');
+        }
+
+        let sArif = summ8 / arif;
+        alert('Сумма: ' + summ8 + ', среднее арифметическое: ' + sArif);
+       
         // Задание 9
 
-        let days = 5687;
+        let nums = '4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57';
+        let min = Infinity;
+        let max = -Infinity;
+        let buffer = '';
 
-        let second = days * 24 * 60 * 60;
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] === ' ') {
+                if (Number(buffer) > max)  max = Number(buffer);
+                if (Number(buffer) < min)  min = Number(buffer);
+                buffer = ''
+            } else {
+                buffer = buffer + nums[i]
+            }
+        }
+        console.log('Минимальное значение: ' + min);
+        console.log('Максимальное значение: ' + max);
+           
+        // Задание 9
 
-        if(second <= 0) {
-            console.log('Неверное значение');
-        } else if(second == 1) {
-            console.log('1 секунда')           
-        } else if((second > 1)&&(second < 5)) {
-            console.log(second + ' секунды')
-        } else {    
-            console.log(second + ' секунд')       
+        let n = +prompt('Введите число')
+
+        let numString = String(n);
+        let numCount = numString.length;
+        let summ = 0;
+        let numRev = '';
+
+        for (let i = 0; i < numString.length; i++) {
+            document.write(numString[i] + ' ');
+            summ += Number(numString[i]);  
         }
 
-        let minute = days * 24 * 60;
-
-        if(minute <= 0) {
-            console.log('Неверное значение');
-        } else if(minute == 1) {
-            console.log('1 минутa')           
-        } else if((minute > 1)&&(minute < 5)) {
-            console.log(minute + ' минуты')
-        } else {    
-            console.log(minute + ' минут')       
+        for (let i = numString.length - 1; i >= 0; i--) {
+            numRev += numString[i]
         }
-
-        let hour = days * 24;
-
-        if(hour <= 0) {
-            console.log('Неверное значение');
-        } else if(hour == 1) {
-            console.log('1 час')           
-        } else if((hour > 1)&&(hour < 5)) {
-            console.log(hour + ' часа')
-        } else {    
-            console.log(hour + ' часов')       
-        }
-
-        let week = days / 7;
-        week = Math.floor(week);
-
-        if(week <= 0) {
-            console.log('Неверное значение');
-        } else if((week > 0) && (week < 1)) {
-            console.log('Меньше недели');
-        } else if(week == 1) {
-            console.log('1 неделя');
-        } else if((week > 1) && (week < 5)) {
-            console.log(week + ' недели');
-        } else {
-            console.log(week + ' недель')
-        }
-
-        let month = days / 31;
-        month = Math.floor(month);
-
-        if(month <= 0) {
-            console.log('Неверное значение');
-        } else if((month > 0) && (month < 1)) {
-            console.log('Меньше месяца');
-        } else if(month == 1) {
-            console.log('1 месяц');
-        } else if((month > 1) && (month < 5)) {
-            console.log(month + ' месяца');
-        } else {
-            console.log(month + ' месяцев')
-        }
-
-        let years = days / 365;
-        years = Math.floor(years);
-
-        if(years <= 0) {
-            console.log('Неверное значение');
-        } else if((years > 0) && (years < 1)) {
-            console.log('Меньше года');
-        } else if(years == 1) {
-            console.log('1 год');
-        } else if((years > 1) && (years < 5)) {
-            console.log(years + ' года');
-        } else {
-            console.log(years + ' лет')
-        }
-        
-        // Задание 10
-
-        day = 320;
-
-        if((day <= 0) || (day > 365)) {
-            console.log('Неверное значение');
-        } else if((day >= 1)&&(day <= 31)) {
-            console.log('Январь');
-            month = 'Январь';
-        } else if((day >= 32)&&(day <= 59)) {
-            console.log('Февраль');
-            month = 'Февраль';
-        } else if((day >= 60)&&(day <= 90)) {
-            console.log('Март');
-            month = 'Март';
-        } else if((day >= 91)&&(day <= 120)) {
-            console.log('Апрель');
-            month = 'Апрель';
-        } else if((day >= 121)&&(day <= 151)) {
-            console.log('Май');
-            month = 'Май';
-        } else if((day >= 152)&&(day <= 181)) {
-            console.log('Июнь');
-            month = 'Июнь';
-        } else if((day >= 182)&&(day <= 212)) {
-            console.log('Июль');
-            month = 'Июль';
-        } else if((day >= 213)&&(day <= 243)) {
-            console.log('Август');
-            month = 'Август';
-        } else if((day >= 244)&&(day <= 273)) {
-            console.log('Сентябрь');
-            month = 'Сентябрь';
-        } else if((day >= 274)&&(day <= 304)) {
-            console.log('Октябрь');
-            month = 'Октябрь';
-        } else if((day >= 305)&&(day <= 334)) {
-            console.log('Ноябрь');
-            month = 'Ноябрь';
-        } else if((day >= 335)&&(day <= 365)) {
-            console.log('Декабрь');
-            month = 'Декабрь';
-        }
-
-        switch (month) {
-            case 'Декабрь': 
-                console.log('Зима');
-            break;
-            case 'Январь': 
-                console.log('Зима');
-            break;
-            case 'Февраль': 
-                console.log('Зима');
-            break;
-            case 'Март': 
-                console.log('Весна');
-            break;
-            case 'Апрель': 
-                console.log('Весна');
-            break;
-            case 'Май': 
-                console.log('Весна');
-            break;
-            case 'Июнь': 
-                console.log('Лето');
-            break;
-            case 'Июль': 
-                console.log('Лето');
-            break;
-            case 'Август': 
-                console.log('Лето');
-            break;
-            case 'Сентябрь': 
-                console.log('Осень');
-            break;
-            case 'Октябрь': 
-                console.log('Осень');
-            break;
-            case 'Ноябрь': 
-                console.log('Осень');
-            break;
-        }
-
-
+    
+        document.write('<br>' + 'Исходное значение: ' + n + ', количество цифр: ' + numCount + ' , сумма цифр: ' + summ + ', в обратном порядке: ' + numRev + '.')
 
     </script>
+
 </body>
 </html>
