@@ -7,174 +7,177 @@
 </head>
 <body>
     <script> 
-    // Задание 1
-        for(let i=1; i<=50; i++) {
-            console.log(i);        
+        // Задание 1
+        document.write('Задание 1' + '<br>' + '<br>');
+
+        let arr1 = [1, 2, 3, 4, 5];
+
+        for(let i1 = 0; i1 < arr1.length; i1++) {
+            document.write(arr1[i1]);
         }
 
-        for(let i=35; i>=8; i--) {
-            console.log(i);        
-        }
+        // Задание 2
+        document.write('<br>' + '<br>' + 'Задание 2' + '<br>' + '<br>');
 
-         // Задание 2
+        let arr2 = [-2, -1, -3, 15, 0, -4, 2, -5, 9, -15, 0, 4, 5, -6, 10, 7];
 
-         let i2 = 89;
-         while(i2>=11) {
-            document.write(i2 + '<br>');
-            i2--;            
-         }
-         document.write('<br>');
-
-        // Задание 3
-        console.log('');
-
-        let i3 = 0;
-        let sum = 0;
-
-        while (i3 <= 100) {
-            sum += i3;
-            i3++;
-        }
-        console.log(sum);
-
-        console.log('');
-
-        // Задание 4
-
-        let n4 = 5;
-        let summ4 = 0;
-
-        for(let i4 = 1; i4 <= 5; i4++) {
-            summ4 += i4;
-        }
-
-        console.log(summ4);
-
-        console.log('');
-
-        // Задание 5
-
-        let i5 = 8;
-        
-        while(i5 <= 56) {
-            if (i5 % 2 == 0) {
-                console.log(i5);
-            }
-            i5++ 
-        }
-        
-        for(i5 = 8; i5 <= 56; i5++) {
-            if (i5 % 2 == 0) {
-                console.log(i5);
-            }
-        }
-
-        console.log('');
-
-        // Задание 6
-
-        for(let i = 2; i <= 10; i++) {
-            for(let b = 1; b <=10; b++) {
-
-                document.write(i + '*' + b + ' = ' + (i * b) + "<br>");
-                           
-            }
-            document.write('<br>');
-        }
-
-
-        // Задание 7
-  
-        let n7 = 1000;
-        let str = '';
-        let resultRev = '';
-        let result = '';
-       
-        let num = 0;
-
-        while (n7 >= 50) {
-            n7 /= 2;
-            if(n7 < 50) {
-                break;
-            }
-            str += (n7 + ' ');
-            num += 1;
-        }
-
-        for(let res = str.length - 2; res >= 0; res--) {
-            if(str[res] === ' ') {
-                break;
-            } else {
-                resultRev += str[res];
-            }
+        for(let i2 = 0; i2 < arr2.length; i2++) {
+            if(arr2[i2] <= (-3) && arr2[i2] >= (-10)) document.write(arr2[i2] + ', ');
         }
             
-        for(let rev = resultRev.length - 1; rev >= 0; rev--) {
-            result += resultRev[rev];
+        // Задание 3
+        document.write('<br>' + '<br>' + 'Задание 3' + '<br>' + '<br>')
+
+        let arr3 =[];
+        let arr3for = [];
+        let i3 = 23;
+        sum = 0;
+
+        while(i3 <= 57) {
+            arr3.push(i3);
+            i3++
         }
 
-        document.write('Минимальное значение: ' + result + ', количество итераций: ' + num + '.');
+        for(i3for = 23; i3for <= 57; i3for++) {
+            arr3for.push(i3for);
+        }
 
-       // Задание 8
+        document.write(arr3 + '<br>' + arr3for + '<br>');
 
-       let number = +prompt('Введите значение');
-       let summ8 = 0;
-       let arif = 0;
+        for(arr3sum = 0; arr3sum <= arr3.length; arr3sum++) {
+            sum += arr3sum;
+        }
 
-       while (1) {
-            if(isNaN(number) || number < 0) {
-            alert('Неверное значение')
-            } else if((number == 0) || (number == '')) {
-                break;
-            } else {        
-                summ8 += number;
-                arif +=1;
+        document.write('Сумма элементов массива: ' + sum);
+        
+        // Задание 4
+        document.write('<br>' + '<br>' + 'Задание 4' + '<br>' + '<br>');
+
+        let arr4 = ["10", "20", "30", "50", "235", "3000"];
+
+        for (let i4 = 0; i4 < arr4.length; i4++) {
+            if (arr4[i4][0] === "1" || arr4[i4][0] === "2" || arr4[i4][0] === "5") {
+                document.write(arr4[i4] + ' ');
             }
-            number = +prompt('Введите значение');
         }
 
-        let sArif = summ8 / arif;
-        alert('Сумма: ' + summ8 + ', среднее арифметическое: ' + sArif);
-       
-        // Задание 9
+        // Задание 5
+        document.write('<br>' + '<br>' + 'Задание 5' + '<br>' + '<br>');
+        
+        let week = ['ПН','ВТ','СР','ЧТ','ПТ','СБ','ВС'];
 
-        let nums = '4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57';
-        let min = Infinity;
-        let max = -Infinity;
-        let buffer = '';
-
-        for (let i = 0; i < nums.length; i++) {
-            if (nums[i] === ' ') {
-                if (Number(buffer) > max)  max = Number(buffer);
-                if (Number(buffer) < min)  min = Number(buffer);
-                buffer = ''
+        for(let i5 = 0; i5 < week.length; i5++) {
+            if(i5 >= week.length -2) {
+                document.write(week[i5].bold() + ' ');
             } else {
-                buffer = buffer + nums[i]
+                document.write(week[i5] + ' ');
             }
         }
-        console.log('Минимальное значение: ' + min);
-        console.log('Максимальное значение: ' + max);
-           
+
+        // Задание 6
+        document.write('<br>' + '<br>' + 'Задание 6' + '<br>' + '<br>');
+
+        let arr6 = [3, 8, 19, 15];
+        arr6.push(28);
+        document.write(arr6[arr6.length - 1]);
+
+        // Задание 7
+        document.write('<br>' + '<br>' + 'Задание 7' + '<br>' + '<br>');
+
+        let n7 = +prompt('Введите число');
+        let sum7 = 0;
+        let arr7 = [];
+
+        for(;;) {
+            if(n7 == '') {
+                break;
+            } else if(isNaN(n7)) {
+                alert('Неверное значение');
+            } else {
+                arr7.push(n7);
+            }
+            n7 = +prompt('Введите число');
+        }
+
+        document.write(arr7 + '<br>')
+        arr7.sort(function(a, b) {
+            return a - b;
+        });
+
+        document.write(arr7);
+        
+        // Задание 8
+        document.write('<br>' + '<br>' + 'Задание 8' + '<br>' + '<br>');
+
+        let arr8 = [12, false, 'Текст', 4, 2, -5, 0];
+
+        document.write(arr8.reverse());
+        
         // Задание 9
+        document.write('<br>' + '<br>' + 'Задание 9' + '<br>' + '<br>');
 
-        let n = +prompt('Введите число')
+        let arr9 = [5, 9, 21, , , 9, 78, , , , 6];
+        let und = 0;
 
-        let numString = String(n);
-        let numCount = numString.length;
-        let summ = 0;
-        let numRev = '';
+        for (let i9 = 0; i9 < arr9.length; i9++) {
+            if (arr9[i9] == undefined) {
+                und += 1;
+            }
+        }
+        document.write(und);
 
-        for (let i = 0; i < numString.length; i++) {
-            document.write(numString[i] + ' ');
-            summ += Number(numString[i]);  
+        // Задание 10
+        document.write('<br>' + '<br>' + 'Задание 10' + '<br>' + '<br>');
+
+        let arr10 = [48,9,0,4,21,2,1,0,8,84,76,8,4,13,2];
+        let sum0 = 0;
+        let arrBufer = [];
+        let arr10slice = [];
+        let sumArr = 0;
+
+        for(let i10 = 0; i10 < arr10.length; i10++) {
+            if(arr10[i10] == 0) sum0 +=1;
+        }
+        
+        if(sum0 <= 1) {
+            document.write(0)
+        } else {
+            for(i10 = 0; i10 < arr10.length; i10++) {
+                if(arr10[i10] == 0) arrBufer.push(i10)
+            }
         }
 
-        for (let i = numString.length - 1; i >= 0; i--) {
-            numRev += numString[i]
+        arr10slice = arr10.slice(arrBufer[0] + 1, arrBufer[arrBufer.length-1]);
+
+        for(let a10s = 0; a10s < arr10slice.length; a10s++) {
+            sumArr += arr10slice[a10s]
         }
+
+        document.write('Сумма элементов между двумя нулями равна ' + sumArr);
     
-        document.write('<br>' + 'Исходное значение: ' + n + ', количество цифр: ' + numCount + ' , сумма цифр: ' + summ + ', в обратном порядке: ' + numRev + '.')
+        // Задание 11
+        document.write('<br>' + '<br>' + 'Задание 11' + '<br>' + '<br>')
+        let k = +prompt('Введите количество строк')
+        let pr;
+        let zn;
+        let prM = [];
+        let znM = [];
+        let array1 = [];
+        let array2 = [];
 
+        for(let i11 = 0; i11 < k; i11++) {
+            pr = k - (i11 + 1);
+            prM.push(pr);
+            zn =  1 + (2 * i11);
+            znM.push(zn);
+        }
+
+        for(let j = 0; j <= k - 1; j++) {
+            array1 = new Array(prM[j] + 1).join('\u00A0');
+            array2 = new Array(znM[j] + 1).join('^');
+            document.write(array1 + array2 + '<br>')
+        }
+  
     </script>
 
 </body>
