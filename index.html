@@ -7,173 +7,43 @@
 </head>
 <body>
     <script> 
-    // Задание 1
-        for(let i=1; i<=50; i++) {
-            console.log(i);        
-        }
+        // Задание 1
+        document.write('Задание 1' + '<br>' + '<br>');
 
-        for(let i=35; i>=8; i--) {
-            console.log(i);        
-        }
-
-         // Задание 2
-
-         let i2 = 89;
-         while(i2>=11) {
-            document.write(i2 + '<br>');
-            i2--;            
-         }
-         document.write('<br>');
+        // Задание 2
+        document.write('<br>' + '<br>' + 'Задание 2' + '<br>' + '<br>');
 
         // Задание 3
-        console.log('');
-
-        let i3 = 0;
-        let sum = 0;
-
-        while (i3 <= 100) {
-            sum += i3;
-            i3++;
-        }
-        console.log(sum);
-
-        console.log('');
-
+        document.write('<br>' + '<br>' + 'Задание 3' + '<br>' + '<br>')
+        
         // Задание 4
-
-        let n4 = 5;
-        let summ4 = 0;
-
-        for(let i4 = 1; i4 <= 5; i4++) {
-            summ4 += i4;
-        }
-
-        console.log(summ4);
-
-        console.log('');
+        document.write('<br>' + '<br>' + 'Задание 4' + '<br>' + '<br>');
 
         // Задание 5
-
-        let i5 = 8;
+        document.write('<br>' + '<br>' + 'Задание 5' + '<br>' + '<br>');
         
-        while(i5 <= 56) {
-            if (i5 % 2 == 0) {
-                console.log(i5);
-            }
-            i5++ 
-        }
-        
-        for(i5 = 8; i5 <= 56; i5++) {
-            if (i5 % 2 == 0) {
-                console.log(i5);
-            }
-        }
-
-        console.log('');
-
         // Задание 6
-
-        for(let i = 2; i <= 10; i++) {
-            for(let b = 1; b <=10; b++) {
-
-                document.write(i + '*' + b + ' = ' + (i * b) + "<br>");
-                           
-            }
-            document.write('<br>');
-        }
-
+        document.write('<br>' + '<br>' + 'Задание 6' + '<br>' + '<br>');
 
         // Задание 7
-  
-        let n7 = 1000;
-        let str = '';
-        let resultRev = '';
-        let result = '';
-       
-        let num = 0;
+        document.write('<br>' + '<br>' + 'Задание 7' + '<br>' + '<br>');
 
-        while (n7 >= 50) {
-            n7 /= 2;
-            if(n7 < 50) {
-                break;
-            }
-            str += (n7 + ' ');
-            num += 1;
-        }
 
-        for(let res = str.length - 2; res >= 0; res--) {
-            if(str[res] === ' ') {
-                break;
-            } else {
-                resultRev += str[res];
-            }
-        }
-            
-        for(let rev = resultRev.length - 1; rev >= 0; rev--) {
-            result += resultRev[rev];
-        }
+        
+        // Задание 8
+        document.write('<br>' + '<br>' + 'Задание 8' + '<br>' + '<br>');
 
-        document.write('Минимальное значение: ' + result + ', количество итераций: ' + num + '.');
 
-       // Задание 8
-
-       let number = +prompt('Введите значение');
-       let summ8 = 0;
-       let arif = 0;
-
-       while (1) {
-            if(isNaN(number) || number < 0) {
-            alert('Неверное значение')
-            } else if((number == 0) || (number == '')) {
-                break;
-            } else {        
-                summ8 += number;
-                arif +=1;
-            }
-            number = +prompt('Введите значение');
-        }
-
-        let sArif = summ8 / arif;
-        alert('Сумма: ' + summ8 + ', среднее арифметическое: ' + sArif);
-       
         // Задание 9
+        document.write('<br>' + '<br>' + 'Задание 9' + '<br>' + '<br>');
 
-        let nums = '4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57';
-        let min = Infinity;
-        let max = -Infinity;
-        let buffer = '';
 
-        for (let i = 0; i < nums.length; i++) {
-            if (nums[i] === ' ') {
-                if (Number(buffer) > max)  max = Number(buffer);
-                if (Number(buffer) < min)  min = Number(buffer);
-                buffer = ''
-            } else {
-                buffer = buffer + nums[i]
-            }
-        }
-        console.log('Минимальное значение: ' + min);
-        console.log('Максимальное значение: ' + max);
-           
-        // Задание 9
+        // Задание 10
+        document.write('<br>' + '<br>' + 'Задание 10' + '<br>' + '<br>');
 
-        let n = +prompt('Введите число')
 
-        let numString = String(n);
-        let numCount = numString.length;
-        let summ = 0;
-        let numRev = '';
-
-        for (let i = 0; i < numString.length; i++) {
-            document.write(numString[i] + ' ');
-            summ += Number(numString[i]);  
-        }
-
-        for (let i = numString.length - 1; i >= 0; i--) {
-            numRev += numString[i]
-        }
-    
-        document.write('<br>' + 'Исходное значение: ' + n + ', количество цифр: ' + numCount + ' , сумма цифр: ' + summ + ', в обратном порядке: ' + numRev + '.')
+        // Задание 11
+        document.write('<br>' + '<br>' + 'Задание 11' + '<br>' + '<br>')
 
     </script>
 
