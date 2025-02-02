@@ -10,40 +10,252 @@
         // Задание 1
         document.write('Задание 1' + '<br>' + '<br>');
 
+        function number1 (a1, b1, c1) {
+            document.write((a1 - b1) / c1);
+        }
+
+        number1 (5, 1, 2);
+
         // Задание 2
         document.write('<br>' + '<br>' + 'Задание 2' + '<br>' + '<br>');
 
+        function number2 (a2) {
+            return  'Куб числа: ' + (a2 ** 3) + ', квадрат числа: ' + (a2 ** 2);
+        }
+
+        document.write(number2(68));
+
         // Задание 3
-        document.write('<br>' + '<br>' + 'Задание 3' + '<br>' + '<br>')
+        document.write('<br>' + '<br>' + 'Задание 3' + '<br>' + '<br>');
+
+        const max = function (a3, b3) {
+            return a3 > b3 ? a3 : b3;
+        }
+
+        document.write(max(15, 3));
+
+        document.write('<br>');
+
+        const min = function (a3, b3) {
+            return a3 < b3 ? a3 : b3;
+        }
+
+        document.write(min(15, 3));
         
         // Задание 4
         document.write('<br>' + '<br>' + 'Задание 4' + '<br>' + '<br>');
 
+        let a4 = +prompt ('Укажите первое число диапазона');
+        let b4 = +prompt ('Укажите последнее число диапазона');
+
+        function getArray4 (a4, b4) {
+            
+            let arr4 = [];
+            for(let i = a4; i <= b4; i++) {
+                arr4.push(i);
+            }
+            return  arr4
+        }
+        
+        function printArray4 (arr4) {
+            document.write(arr4);            
+        }
+
+        let display = getArray4 (a4, b4);
+        printArray4(display);
+
         // Задание 5
         document.write('<br>' + '<br>' + 'Задание 5' + '<br>' + '<br>');
-        
+
+        let a5 = +prompt ('Введите целое число');
+
+        function isEven(a5) {
+            if(a5 % 2 == 0) return true;
+            if(a5 % 2 != 0) return false;
+        } 
+
+        document.write(isEven(a5));
+
         // Задание 6
         document.write('<br>' + '<br>' + 'Задание 6' + '<br>' + '<br>');
+
+        let arr6 = [];
+
+        function number6(array) {
+            for (let i = 0; i < array.length; i++) {
+                if (isEven(array[i])) arr6.push(array[i]);
+            }
+            return arr6;
+        }
+
+        document.write(number6([1,2,3,4,5]));
 
         // Задание 7
         document.write('<br>' + '<br>' + 'Задание 7' + '<br>' + '<br>');
 
+        function piramida(k) {
+            
+            for(let i = 1; i <= k; i++) {
+                let num = i;
+                let arrNum = [];
+                let arrStr;
+                if(k > 0 && k < 10) {
+                    for(let j = 1; j <= num; j++) {
+                        arrNum.push(num);
+                    } 
+                }else {
+                    num = '*'
+                    for(let j = 1; j <= i; j++) {
+                        arrNum.push(num);
+                    } 
+                }
 
+                arrStr = arrNum.join('');
+                document.write(arrStr + '<br>');
+            }
+        }
         
+        piramida(11);
+        piramida(7);
+
         // Задание 8
         document.write('<br>' + '<br>' + 'Задание 8' + '<br>' + '<br>');
 
+        const marker = '*';
+        const q = +prompt('Введите количество строк');
+
+        function triangle(q) {
+            for(let i = 1; i <= q; i++) {
+                let line = '';
+                let space = '';
+
+                for(let j = 0; j < i * 2 - 1; j++) {
+                    line += marker;
+                }
+
+                for(let j = i + 1; j <= q; j++) {
+                    space += ' ';
+                }
+
+                document.write('<pre style = "margin: 0;">' + space + line + '</pre>');
+            }
+        }
+
+        triangle(q);
+
+        let pr;
+        let zn;
+        let prM = [];
+        let znM = [];
+        let array1 = [];
+        let array2 = [];
+
+        function triangle1(q) {
+
+            for(let i = q -1; i >= 0; i--) {
+                pr = q  - (i + 1);
+                prM.push(pr);
+                zn =  1 + (2 * i);
+                znM.push(zn);
+            }
+
+            for(let j = 0; j <= q - 1; j++) {
+                array1 = new Array(prM[j] + 1).join('\u00A0');
+                array2 = new Array(znM[j] + 1).join('*');
+                document.write('<pre style="margin: 0;">' + array1 + array2 + '<br>' + '</pre>');
+            }
+        }
+
+        triangle1(q);
 
         // Задание 9
         document.write('<br>' + '<br>' + 'Задание 9' + '<br>' + '<br>');
 
+        const memorize = (fn) => {
+            let cache = {};
+            return (...args) => {
+                let n = args[0];
+                if(n in cache) {
+                    return cache[n];
+                } else {
+                    let result9 = fn(n);
+                    cache[n] = result9;
+                    return result9;
+                }
+            }
+        }
+
+        const fib2 = memorize((n) => {
+            return n <=1 ? n : fib2(n - 1) + fib2(n - 2);
+        })
+
+        document.write(fib2(1000));
 
         // Задание 10
         document.write('<br>' + '<br>' + 'Задание 10' + '<br>' + '<br>');
 
+        let m = 49;
+        let arrM = [];
+        let strM = '';
+        let mSum;
+
+        function rec(m) {
+            strM = String(m);
+            for(let i = 0; i < strM.length; i++) {
+                arrM.push(Number(strM[i]));
+            }
+            mSum = arrM[0] + arrM[1];
+            if(mSum > 9) {
+                m = mSum;
+                str = '';
+                arrM = [];
+                rec(m);
+            } else {
+                document.write(mSum);
+            }
+        }
+
+        rec(m);
 
         // Задание 11
-        document.write('<br>' + '<br>' + 'Задание 11' + '<br>' + '<br>')
+        document.write('<br>' + '<br>' + 'Задание 11' + '<br>' + '<br>');
+
+        let i11 = 0;
+
+        function printArray(array){
+            document.write(array[i11]); i11++;
+            if(i11 < array.length) printArray(array);
+        }
+
+        printArray([5, 18, 19, 28]);
+
+
+         // Задание 12
+         document.write('<br>' + '<br>' + 'Задание 12' + '<br>' + '<br>');
+
+         let str0 = '';
+         let str1 = '* Домашняя работа: «Функции» *';
+         let str2 = '* Выполнил: студент гр. ' + prompt('Введите номер группы') + ' *';
+         let str3 = '* ' + prompt('Введите Вашу фамилию') + ' ' + prompt('Введите Ваше имя') + ' ' + prompt('Введите Ваше отчество') + ' *';
+         let lenArr
+         function starsStr() {
+            let lenStr1 = str1.length;
+            let lenStr2 = str2.length;
+            let lenStr3 = str3.length;
+
+            if(lenStr1 > lenStr2 && lenStr1 > lenStr3) {
+                lenArr = lenStr1;
+            } else if(lenStr2 > lenStr1 && lenStr2 > lenStr3) {
+                lenArr = lenStr2;
+            } else if(lenStr3 > lenStr1 && lenStr3 > lenStr2) {
+                lenArr = lenStr3;
+            }
+
+            str0 = new Array(lenArr + 1).join('*');
+            document.write('<pre style = "margin: 0;">' + str0 +'<br>' + str1 +'<br>' + str2 +'<br>' + str3 + '<br>' + str0 + '</pre>');
+         }
+
+         starsStr();
 
     </script>
 
