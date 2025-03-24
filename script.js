@@ -23,10 +23,17 @@ function ContactList () {
     this.contacts = [];
 
     this.addContact = (contact) => {
+        if(!contact) {
+            contact = new Contact()
+            contact.addContact()
+        }
         this.contacts.push(contact);
     }
 
-    this.show = () => (this.contacts)
+
+    this.showAll = () => {
+        console.log(this.contacts)
+    }
 }
 
 const contactList = new ContactList();
@@ -35,9 +42,6 @@ contactList.addContact(contact1);
 const contact2 = new Contact('Roman', 58, '+375332759891', 'roma@gmail.com') 
 contactList.addContact(contact2);
 
-console.log(contactList.show())
 document.write(contact1.show())
-
-
-
+contactList.showAll()
 
