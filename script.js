@@ -49,7 +49,6 @@ class Contacts {
             contact.edit({ id })  //через слияние объектов забросили id в объект data
 
             this.contacts.push(contact)
-            this.list.push(contact)
         } catch (error) {
             console.error(error.message)  
         }
