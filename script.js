@@ -13,15 +13,16 @@ class Contact {
     data = {}  //весь объект целиком, с учётом id
 
     /**
-     * @param {(name: string, email: string, address: string, phone: string)} param0
+     * @param {(name: string, email: string, address: string, phone: string, id: ?string)} param0
      */
-    constructor ({ name, email, address, phone }) {  //параметры, которые передаём, забрасываем в объект data. Это всё кроме id
+    constructor ({ name, email, address, phone, id }) {  //параметры, которые передаём, забрасываем в объект data. Это всё кроме id
         if (!name.length && !email.length  && !address.length && !phone.length) throw new Error ('Хотя бы одно поле должно быть заполнено') //в дз надо по-другому почему-то придумать
         this.data = {
             name,
             email,
             address,
-            phone
+            phone,
+            id
         }    
     }
 
@@ -42,11 +43,14 @@ class Contacts {
     /** @type {(data: ContactType)[]} */
     contacts = []
 
-    add ({ name, email, address, phone }) {
+    add (data) {
         try {
-            const contact = new Contact ({ name, email, address, phone })
-            const id = Date.now().toString(36)
-            contact.edit({ id })  //через слияние объектов забросили id в объект data
+            const contact = new Contact (data)
+            if (!contact.data.id) {
+                const id = Date.now().toString(36)
+                contact.edit({ id })  //через слияние объектов забросили id в объект data
+            }
+            
 
             this.contacts.push(contact)
         } catch (error) {
@@ -70,6 +74,51 @@ class Contacts {
     remove (id) {
         this.contacts = this.contacts.filter(contact => contact.data.id !== id)  //оставить все заметки, у которых id не равен переданному id
     }
+
+    get store () {
+        const data = localStorage.getItem('contacts')
+        return JSON.parse(data)
+    }
+
+    set store (contacts) {
+        const data = JSON.stringify(this.contacts)
+        localStorage.setItem('contacts', data)
+    }
+
+    setCookies(name, maxAge) {
+        const options = {
+            path: '/',
+            'max-age': maxAge
+          };
+        
+          if (options.expires instanceof Date) {
+            options.expires = options.expires.toUTCString();
+          }
+        
+          let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent('');
+        
+          for (let optionKey in options) {
+            updatedCookie += "; " + optionKey;
+            let optionValue = options[optionKey];
+            if (optionValue !== true) {
+              updatedCookie += "=" + optionValue;
+            }
+          }
+        
+          document.cookie = updatedCookie;
+    }
+
+    getCookies(name) {
+        let matches = document.cookie.match(new RegExp(
+          "(?:^|; )" + name.replace(/([\.$?*|{}$$$$$$\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? true : false;
+    }
+
+    clearStore() {
+        localStorage.removeItem('contacts')
+    }
+
 }
 
 const contact1 = new Contacts()
@@ -108,6 +157,10 @@ class ContactsApp extends Contacts {
             }
 
             this.add(data)
+
+            this.store = this.contacts
+            this.setCookies('contacts', 864000000)
+
             this.render()
 
             name.value = ''   //очистили поля
@@ -120,11 +173,18 @@ class ContactsApp extends Contacts {
 
         this.container.append(form, this.contactContainer)
 
+        if (!this.getCookies('contacts')) {
+            this.clearStore()
+        }
+
+        if (this.store) {
+            this.store?.forEach(contact => this.add(contact.data))
+        }
+
+
         this.render() //отрисовывать сущ. заметки при перезапуске страницы
 
-    }
-
-    
+    }  
 
     render () {
         if (!this.contacts.length) { //this.contacts.length === 0
@@ -150,6 +210,7 @@ class ContactsApp extends Contacts {
                 remove.addEventListener('click', () => {
                     if (confirm('Вы точно хотите удалить?')) {
                         this.remove(contact.data.id)
+                        this.store = this.contacts
                         this.render() 
                     }
                 })
@@ -171,6 +232,7 @@ class ContactsApp extends Contacts {
                         }
 
                         this.edit(contact.data.id, data)
+                        this.store = this.contacts
                         this.render()
                         editable = !editable
                     } else {
@@ -183,7 +245,6 @@ class ContactsApp extends Contacts {
                     }
                 })
 
-
                 name.innerText = contact.data.name
                 email.innerText = contact.data.email
                 address.innerText = contact.data.address
@@ -194,7 +255,6 @@ class ContactsApp extends Contacts {
                 contactItem.append(contents, edit, remove);
 
                 this.contactContainer.append(contactItem);
-
 
             })
         }
